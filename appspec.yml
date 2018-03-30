@@ -42,6 +42,10 @@ files:
   - source: /server.php
     destination: /var/www/phplaravel/
 hooks:
+  BeforeInstall:
+    - location: scripts/before_start
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: scripts/install_dependencies
       timeout: 900
